@@ -1,30 +1,21 @@
-# capella
+# Capella
 
-A new Flutter project.
+Music completely rethought.
 
-## Getting Started
+## What is this?
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+Capella is a music app that pays users money for listening and provides authentic fanbases & direct feedback to small artists.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Our mission is to provide a platform from which up-and-coming musicians can grow their following, especially when the industry giants such as Spotify and Apple Music are just prioritizing their top 250 artists.
 
-## Assets
+## Goals
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+We're in the process of pushing this application to the App Store, but there's still quite a lot of work to be done. 
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+## To Be Done
 
-## Localization
-
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
-
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+ - Add more genres and sample music for each of them
+ - Integrate Gmail/Facebook/email API to allow users to link accounts
+ - Integrate Spotify/Apple Music/SoundCloud to allow artists to link their profile and allow users to add songs to their playlists
+ - Integrate monetary API to allow deposits from artists and withdrawals from listeners
+ - Integrate AWS API to upload user information and run machine learning algorithms to suggest music, along with storing image and music assets
