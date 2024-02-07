@@ -1,6 +1,6 @@
 # Capella
 
-Music completely rethought.
+Music has been completely rethought.
 
 ## What is this?
 
