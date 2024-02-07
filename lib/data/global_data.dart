@@ -1,45 +1,114 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:capella/widgets/song_widget.dart';
 
 List<Song> indie = [
-  const Song('assets/audio/indie/glue.png', 'Glue Song', 'beabadoobee', 'assets/audio/indie/glue.mp3', 'Indie', false, true),
-  const Song('assets/audio/indie/always.png', 'Always', 'Daniel Caesar', 'assets/audio/indie/always.mp3', 'Indie', false, true),
-  const Song('assets/audio/indie/loretta.png', 'Loretta', 'Ginger Root', 'assets/audio/indie/loretta.mp3', 'Indie', false, true),
+  const Song('assets/audio/indie/glue.png', 'Glue Song', 'beabadoobee',
+      'assets/audio/indie/glue.mp3', 'Indie', false, true),
+  const Song('assets/audio/indie/always.png', 'Always', 'Daniel Caesar',
+      'assets/audio/indie/always.mp3', 'Indie', false, true),
+  const Song('assets/audio/indie/loretta.png', 'Loretta', 'Ginger Root',
+      'assets/audio/indie/loretta.mp3', 'Indie', false, true),
 ];
 
 List<Song> rock = [
-  const Song('assets/audio/rock/lovecomes.jpg', 'Love Comes', 'chintu', 'assets/audio/rock/lovecomes.mp3', 'Rock and Roll', false, true),
-  const Song('assets/audio/rock/breathe.png', 'Breathe', 'Pink Floyd', 'assets/audio/rock/breathe.mp3', 'Rock and Roll', false, true),
-  const Song('assets/audio/rock/bird.png', 'Blackbird', 'The Beatles', 'assets/audio/rock/bird.mp3', 'Rock and Roll', false, true),
-  const Song('assets/audio/rock/happy.png', 'Happy Together', 'The Turtles', 'assets/audio/rock/happy.mp3', 'Rock and Roll', false, true),
+  const Song('assets/audio/rock/lovecomes.jpg', 'Love Comes', 'chintu',
+      'assets/audio/rock/lovecomes.mp3', 'Rock and Roll', false, true),
+  const Song('assets/audio/rock/breathe.png', 'Breathe', 'Pink Floyd',
+      'assets/audio/rock/breathe.mp3', 'Rock and Roll', false, true),
+  const Song('assets/audio/rock/bird.png', 'Blackbird', 'The Beatles',
+      'assets/audio/rock/bird.mp3', 'Rock and Roll', false, true),
+  const Song('assets/audio/rock/happy.png', 'Happy Together', 'The Turtles',
+      'assets/audio/rock/happy.mp3', 'Rock and Roll', false, true),
 ];
 
 List<Song> international = [
-  const Song('assets/audio/international/histoire.png', "Une autre histoire d'amour", "chintu", 'assets/audio/international/histoire.mp3', 'International', false, true),
-  const Song('assets/audio/international/nuits.png', 'nuits d\'ete', 'Oscar Anton', 'assets/audio/international/nuits.mp3', 'International', false, true),
-  const Song('assets/audio/international/naive.png', 'Naïve', 'Therapie Taxi', 'assets/audio/international/naive.mp3', 'International', false, true),
-  const Song('assets/audio/international/fessee.png', 'La fessée', 'Claire Laffut', 'assets/audio/international/fessee.mp3', 'International', false, true),
+  const Song(
+      'assets/audio/international/histoire.png',
+      "Une autre histoire d'amour",
+      "chintu",
+      'assets/audio/international/histoire.mp3',
+      'International',
+      false,
+      true),
+  const Song(
+      'assets/audio/international/nuits.png',
+      'nuits d\'ete',
+      'Oscar Anton',
+      'assets/audio/international/nuits.mp3',
+      'International',
+      false,
+      true),
+  const Song('assets/audio/international/naive.png', 'Naïve', 'Therapie Taxi',
+      'assets/audio/international/naive.mp3', 'International', false, true),
+  const Song(
+      'assets/audio/international/fessee.png',
+      'La fessée',
+      'Claire Laffut',
+      'assets/audio/international/fessee.mp3',
+      'International',
+      false,
+      true),
 ];
 
 // ignore: non_constant_identifier_names
 List<Song> modern_classical = [
-  const Song('assets/audio/modern_classical/reflections.jpg', 'Reflections', 'chintu', 'assets/audio/modern_classical/reflections.mp3', 'Modern Classical', false, true),
-  const Song('assets/audio/modern_classical/interstellar.png', 'Interstellar', 'Hans Zimmer', 'assets/audio/modern_classical/interstellar.mp3', 'Modern Classical', false, true),
-  const Song('assets/audio/modern_classical/planetarium.png', 'Planetarium', 'Justin Hurwitz', 'assets/audio/modern_classical/planetarium.mp3', 'Modern Classical', false, true),
-  const Song('assets/audio/modern_classical/married.png', 'Married Life', 'Michael Giancchino', 'assets/audio/modern_classical/married.mp3', 'Modern Classical', false, true),
+  const Song(
+      'assets/audio/modern_classical/reflections.jpg',
+      'Reflections',
+      'chintu',
+      'assets/audio/modern_classical/reflections.mp3',
+      'Modern Classical',
+      false,
+      true),
+  const Song(
+      'assets/audio/modern_classical/interstellar.png',
+      'Interstellar',
+      'Hans Zimmer',
+      'assets/audio/modern_classical/interstellar.mp3',
+      'Modern Classical',
+      false,
+      true),
+  const Song(
+      'assets/audio/modern_classical/planetarium.png',
+      'Planetarium',
+      'Justin Hurwitz',
+      'assets/audio/modern_classical/planetarium.mp3',
+      'Modern Classical',
+      false,
+      true),
+  const Song(
+      'assets/audio/modern_classical/married.png',
+      'Married Life',
+      'Michael Giancchino',
+      'assets/audio/modern_classical/married.mp3',
+      'Modern Classical',
+      false,
+      true),
 ];
 
 List<Song> yourSongs = [
-  const Song('assets/audio/international/histoire.png', "Une autre histoire d'amour", "chintu", 'assets/audio/international/histoire.mp3', '', true, true),
-  const Song('assets/audio/modern_classical/reflections.jpg', 'Reflections', 'chintu', 'assets/audio/modern_classical/reflections.mp3', '', true, true),
-  const Song('assets/audio/rock/lovecomes.jpg', 'Love Comes', 'chintu', 'assets/audio/rock/lovecomes.mp3', '', true, true),
+  const Song(
+      'assets/audio/international/histoire.png',
+      "Une autre histoire d'amour",
+      "chintu",
+      'assets/audio/international/histoire.mp3',
+      '',
+      true,
+      true),
+  const Song(
+      'assets/audio/modern_classical/reflections.jpg',
+      'Reflections',
+      'chintu',
+      'assets/audio/modern_classical/reflections.mp3',
+      '',
+      true,
+      true),
+  const Song('assets/audio/rock/lovecomes.jpg', 'Love Comes', 'chintu',
+      'assets/audio/rock/lovecomes.mp3', '', true, true),
 ];
 
-List<Song> listened = [
-
-];
+List<Song> listened = [];
 
 Map<String, List<Song>> genresMap = {
   "Indie": indie,
@@ -52,7 +121,7 @@ String status = ''; //'listener' or 'artist'
 bool signedIn = false;
 
 var preferenceList = [];
-var balance = 102.32 + listened.length * perSong;
+var balance = 102.36 + listened.length * perSong;
 var perSong = 0.12;
 
 var total = 10.00;

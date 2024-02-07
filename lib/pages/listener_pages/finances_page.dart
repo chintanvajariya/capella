@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fl_chart/fl_chart.dart'; // For bar charts
@@ -12,19 +12,23 @@ class FinancesPage extends StatefulWidget {
 }
 
 class _FinancesPageState extends State<FinancesPage> {
-  var grad = const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [orang, pink, purp]);
+  var grad = const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [orang, pink, purp]);
   double wid = 22;
   var rad = const BorderRadius.all(Radius.circular(10));
-  var back = BackgroundBarChartRodData(toY: 8.16, show: true, color: Colors.grey.withOpacity(0.2));
+  var back = BackgroundBarChartRodData(
+      toY: 4.16, show: true, color: Colors.grey.withOpacity(0.2));
 
   TextEditingController inputController = TextEditingController();
 
-
-int startIndex = 0;
+  int startIndex = 0;
   final int numberOfBarsToShow = 7;
 
   // Dummy data for demonstration
-  final List<double> allData = List.generate(30, (index) => (index + 1) * 0.12 * (index % 5 + 20));
+  final List<double> allData =
+      List.generate(30, (index) => (index + 1) * 0.12 * (index % 5 + 20));
 
   // Method to get the bar groups to display
   List<BarChartGroupData> getVisibleBarGroups() {
@@ -35,20 +39,21 @@ int startIndex = 0;
         .asMap()
         .entries
         .map((entry) {
-          int index = entry.key;
-          double value = entry.value;
-          return BarChartGroupData(
-            x: index,
-            barRods: [
-              BarChartRodData(
-                toY: value,
-                gradient: const LinearGradient(colors: [Colors.blue, Colors.blueAccent]),
-                width: 16,
-                borderRadius: BorderRadius.circular(4),
-              ),
-            ],
-          );
-        }).toList();
+      int index = entry.key;
+      double value = entry.value;
+      return BarChartGroupData(
+        x: index,
+        barRods: [
+          BarChartRodData(
+            toY: value,
+            gradient:
+                const LinearGradient(colors: [Colors.blue, Colors.blueAccent]),
+            width: 16,
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ],
+      );
+    }).toList();
   }
 
   // Dynamic bottom titles based on visible data
@@ -63,7 +68,8 @@ int startIndex = 0;
           return SideTitleWidget(
             axisSide: meta.axisSide,
             space: 23,
-            child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 14)),
+            child: Text(label,
+                style: const TextStyle(color: Colors.white, fontSize: 14)),
           );
         },
       ),
@@ -77,14 +83,14 @@ int startIndex = 0;
     return "${date.month}/${date.day}";
   }
 
-  
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
-        if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
           FocusManager.instance.primaryFocus?.unfocus();
         }
       },
@@ -137,52 +143,63 @@ int startIndex = 0;
                       height: 376,
                       width: 400,
                       child: BarChart(
-                        swapAnimationDuration: const Duration(milliseconds: 150000), // Optional
+                        swapAnimationDuration:
+                            const Duration(milliseconds: 150000), // Optional
                         swapAnimationCurve: Curves.easeInOutCubic,
                         BarChartData(
                           barTouchData: BarTouchData(
-                          touchTooltipData: BarTouchTooltipData(
-                            tooltipBgColor: Colors.grey.withOpacity(0.75),
-                            tooltipHorizontalAlignment: FLHorizontalAlignment.left,
-                            tooltipMargin: -10,
-                            getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                              return BarTooltipItem(
-                                '\$',
-                                const TextStyle(
-                                  color: purp2,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: (rod.toY).toStringAsFixed(2),
-                                    style: const TextStyle(
-                                      color: purp2,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            touchTooltipData: BarTouchTooltipData(
+                              tooltipBgColor: Colors.grey.withOpacity(0.75),
+                              tooltipHorizontalAlignment:
+                                  FLHorizontalAlignment.left,
+                              tooltipMargin: -10,
+                              getTooltipItem:
+                                  (group, groupIndex, rod, rodIndex) {
+                                return BarTooltipItem(
+                                  '\$',
+                                  const TextStyle(
+                                    color: purp2,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
                                   ),
-                                ],
-                              );
-                            },),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: (rod.toY).toStringAsFixed(2),
+                                      style: const TextStyle(
+                                        color: purp2,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
                           ),
                           alignment: BarChartAlignment.spaceAround,
-                          maxY: 8,
+                          maxY: 4,
                           titlesData: FlTitlesData(
                             show: true,
-                            topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                            rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                            topTitles: const AxisTitles(
+                                sideTitles: SideTitles(showTitles: false)),
+                            rightTitles: const AxisTitles(
+                                sideTitles: SideTitles(showTitles: false)),
                             bottomTitles: AxisTitles(
                               sideTitles: SideTitles(
                                 showTitles: true,
                                 reservedSize: 40,
-                                getTitlesWidget: (double value, TitleMeta meta) {
-                                DateTime date = DateTime.now().subtract(Duration(days: 6 - value.toInt()));
-                                String text = '${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}';
+                                getTitlesWidget:
+                                    (double value, TitleMeta meta) {
+                                  DateTime date = DateTime.now().subtract(
+                                      Duration(days: 6 - value.toInt()));
+                                  String text =
+                                      '${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}';
                                   return SideTitleWidget(
                                     axisSide: meta.axisSide,
                                     space: 23,
-                                    child: Text(text, style: const TextStyle(color: purp2, fontSize: 14)),
+                                    child: Text(text,
+                                        style: const TextStyle(
+                                            color: purp2, fontSize: 14)),
                                   );
                                 },
                               ),
@@ -191,11 +208,14 @@ int startIndex = 0;
                               sideTitles: SideTitles(
                                 showTitles: true,
                                 reservedSize: 40,
-                                getTitlesWidget: (double value, TitleMeta meta) {
+                                getTitlesWidget:
+                                    (double value, TitleMeta meta) {
                                   return SideTitleWidget(
                                     axisSide: meta.axisSide,
                                     space: 20,
-                                    child: Text('\$${value.toInt()}', style: const TextStyle(color: purp2, fontSize: 14)),
+                                    child: Text('\$${value.toInt()}',
+                                        style: const TextStyle(
+                                            color: purp2, fontSize: 14)),
                                   );
                                 },
                               ),
@@ -206,13 +226,62 @@ int startIndex = 0;
                             show: false,
                           ),
                           barGroups: [
-                            BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 0.12 * 25, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 1, barRods: [BarChartRodData(toY: 0.12 * 42, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 2, barRods: [BarChartRodData(toY: 0.12 * 51, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 3, barRods: [BarChartRodData(toY: 0.12 * 68, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 4, barRods: [BarChartRodData(toY: 0.12 * 28, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 5, barRods: [BarChartRodData(toY: 0.12 * 41, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
-                            BarChartGroupData(x: 6, barRods: [BarChartRodData(toY: listened.length * perSong, gradient: grad, width: wid, borderRadius: rad, backDrawRodData: back)]),
+                            BarChartGroupData(x: 0, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 12,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 1, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 21,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 2, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 25,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 3, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 34,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 4, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 14,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 5, barRods: [
+                              BarChartRodData(
+                                  toY: 0.12 * 20,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
+                            BarChartGroupData(x: 6, barRods: [
+                              BarChartRodData(
+                                  toY: listened.length * perSong,
+                                  gradient: grad,
+                                  width: wid,
+                                  borderRadius: rad,
+                                  backDrawRodData: back)
+                            ]),
                           ],
                         ),
                       ),
@@ -221,7 +290,8 @@ int startIndex = 0;
                   const SizedBox(height: 35),
                   Center(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         gradient: const LinearGradient(
@@ -238,7 +308,7 @@ int startIndex = 0;
                       child: Column(
                         children: [
                           Text(
-                            '\$${((balance*100).floor()/100.0).toStringAsFixed(2)}',
+                            '\$${((balance * 100).floor() / 100.0).toStringAsFixed(2)}',
                             style: const TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -257,22 +327,31 @@ int startIndex = 0;
                     ),
                   ),
                   const SizedBox(height: 28),
-                  
                   Center(
                     child: SizedBox(
                       width: 110,
                       child: CupertinoTextField(
-                        padding: const EdgeInsets.only(right: 7, top: 7, bottom: 7,),
+                        padding: const EdgeInsets.only(
+                          right: 7,
+                          top: 7,
+                          bottom: 7,
+                        ),
                         controller: inputController,
-                        prefix: const Icon(CupertinoIcons.money_dollar, size: 30, color: purp2,),
-                        style: TextStyle(color: Theme.of(context).colorScheme.primary, fontSize: 25),
+                        prefix: const Icon(
+                          CupertinoIcons.money_dollar,
+                          size: 30,
+                          color: purp2,
+                        ),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 25),
                         placeholder: '0.00',
-                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                        keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true),
                       ),
                     ),
                   ),
                   const SizedBox(height: 28),
-                  
                   Center(
                     child: CupertinoButton(
                       color: purp,
@@ -284,13 +363,16 @@ int startIndex = 0;
                       onPressed: () {
                         String inputText = inputController.text;
                         if (!_isValidInput(inputText)) {
-                          _showErrorDialog(context, 'Invalid input. Please enter a valid amount.');
+                          _showErrorDialog(context,
+                              'Invalid input. Please enter a valid amount.');
                           return;
                         }
-                          
-                        double inputAmount = double.parse(inputText.replaceAll('\$', ''));
+
+                        double inputAmount =
+                            double.parse(inputText.replaceAll('\$', ''));
                         if (!false && inputAmount > balance) {
-                          _showErrorDialog(context, 'Insufficient funds. Please enter a smaller amount.');
+                          _showErrorDialog(context,
+                              'Insufficient funds. Please enter a smaller amount.');
                           return;
                         }
                         setState(() {
@@ -299,12 +381,10 @@ int startIndex = 0;
                         });
                       },
                       child: Text('Withdraw',
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
-                        )
-                      ),
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500)),
                     ),
                   ),
                 ],
