@@ -11,11 +11,6 @@ import 'package:capella/pages/choice_page.dart';
 import 'package:capella/pages/listener_pages/like_page.dart';
 import 'package:capella/pages/listener_pages/listener_root_tabbed_page.dart';
 
-var accessKey = "AKIAXQABRU5JLOHT3MU6";
-var secretKey = "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";
-var bucket = "mycapellaappbucket";
-var region = "us-east-2";
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   var seed = DateTime.now().millisecondsSinceEpoch;
