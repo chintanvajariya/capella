@@ -26,6 +26,9 @@ We're in the process of pushing this application to the App Store, but there's s
  - Integrate monetary API to allow deposits from artists and withdrawals from listeners
  - Integrate AWS API to upload user information and run machine learning algorithms to suggest music, along with storing image and music assets
 
+## Capella Demo
+https://github.com/chintanvajariya/capella/assets/49341214/59a9c1fe-eae1-4f0e-9670-63f04bc30770
+
 ## Selection Page
 <img src="https://github.com/chintanvajariya/capella/assets/49341214/2438bd96-c19e-4c7d-94c4-f1db5d93a8a8" alt="Selection Page" width="200"/>
 
