@@ -254,10 +254,22 @@ class _SongPageState extends State<SongPage> {
               ),
               const SizedBox(height: 40),
               Center(
-                child: Image.asset(
-                  cover,
-                  width: 325,
-                  height: 325,
+                child: Container(
+                  padding: const EdgeInsets.all(1.0),
+                  decoration: BoxDecoration(boxShadow: const [
+                    BoxShadow(
+                      color: purp3,
+                      blurRadius: 8,
+                    ),
+                  ], color: purp2, borderRadius: BorderRadius.circular(6.0)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.0),
+                    child: Image.asset(
+                      cover,
+                      width: 325,
+                      height: 325,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 25),
